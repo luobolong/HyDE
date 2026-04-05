@@ -29,6 +29,9 @@
     "group/pill#center": {
         "orientation": "inherit",
         "modules": [
+            "custom/mpris-previous",
+            "custom/mpris-next",
+            "mpris#main",
             "custom/cava",
             "idle_inhibitor",
             "clock"

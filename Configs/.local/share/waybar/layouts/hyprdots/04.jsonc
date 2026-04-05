@@ -38,6 +38,9 @@
         "orientation": "inherit",
         "modules": [
             "hyprland/workspaces",
+            "custom/mpris-previous",
+            "custom/mpris-next",
+            "mpris#main",
             "hyprland/window"
         ]
     },

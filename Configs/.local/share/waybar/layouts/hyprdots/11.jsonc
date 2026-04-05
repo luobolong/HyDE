@@ -36,6 +36,9 @@
   "group/pill#right1": {
     "orientation": "inherit",
     "modules": [
+            "custom/mpris-previous",
+            "custom/mpris-next",
+            "mpris#main",
       "backlight",
       "network",
       "pulseaudio",

@@ -21,7 +21,9 @@
         "orientation": "inherit",
         "modules": [
             "wlr/taskbar",
-            "mpris"
+            "custom/mpris-previous",
+            "custom/mpris-next",
+            "mpris#main"
         ]
     },
     "modules-center": [

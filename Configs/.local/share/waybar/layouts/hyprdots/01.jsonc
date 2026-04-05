@@ -35,6 +35,9 @@
     "group/pill#center": {
         "modules": [
             "hyprland/workspaces",
+            "custom/mpris-previous",
+            "custom/mpris-next",
+            "mpris#main",
             "hyprland/window"
         ],
         "orientation": "inherit"

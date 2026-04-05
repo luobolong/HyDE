@@ -32,6 +32,9 @@
     "orientation": "inherit",
     "modules": [
       "keyboard-state",
+      "custom/mpris-previous",
+      "custom/mpris-next",
+      "mpris#main",
       "clock",
       "custom/updates",
       "custom/keybindhint",
