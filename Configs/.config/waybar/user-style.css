@@ -16,10 +16,21 @@
 }
 
 #custom-mpris-next + #mpris {
+    padding-left: 0;
+}
+
+#custom-mpris-next + #mpris.playing,
+#custom-mpris-next + #mpris.paused {
     padding-left: 0.45em;
 }
 
 #mpris {
+    min-width: 0;
+    padding-right: 0;
+}
+
+#mpris.playing,
+#mpris.paused {
     min-width: 10em;
     padding-right: 0.35em;
 }
@@ -29,6 +40,17 @@
     opacity: 0.7;
 }
 
+#mpris.stopped {
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 #mpris + #window {
+    padding-left: 0;
+}
+
+#mpris.playing + #window,
+#mpris.paused + #window {
     padding-left: 0.55em;
 }
