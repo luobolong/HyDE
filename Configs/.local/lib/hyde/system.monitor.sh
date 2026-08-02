@@ -40,7 +40,7 @@ pidFile="$XDG_RUNTIME_DIR/hyde/sysmonlaunch.pid"
 if [ -f "$pidFile" ]; then
     while IFS= read -r line; do
         pid=$(awk -F ':::' '{print $1}' <<< "$line")
-        if [ -d "/proc/$pid" ]; then
+        if [[ "$pid" =~ ^[0-9]+$ ]] && [ -d "/proc/$pid" ]; then
             cmd=$(awk -F ':::' '{print $2}' <<< "$line")
             pkill -P "$pid"
             pkg_installed flatpak && flatpak kill "$cmd" 2> /dev/null
@@ -56,7 +56,11 @@ pkgChk+=("${SYSMONITOR_COMMANDS[@]}")
 for sysMon in "${!pkgChk[@]}"; do
     if gtk-launch "${pkgChk[sysMon]}"; then
         pid=$(pgrep -n -f "${pkgChk[sysMon]}")
-        echo "$pid:::${pkgChk[sysMon]}" > "$pidFile"
+        if [[ "$pid" =~ ^[0-9]+$ ]]; then
+            echo "$pid:::${pkgChk[sysMon]}" > "$pidFile"
+        else
+            rm -f "$pidFile"
+        fi
         break
     fi
     if pkg_installed "${pkgChk[sysMon]}"; then
